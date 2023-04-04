@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Automovel.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Automovel.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">atividade1</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Automovel{</span>
+
+
+<span class="s0">private </span><span class="s1">String placa</span><span class="s0">;</span>
+<span class="s0">private double </span><span class="s1">kmTotal</span><span class="s0">;</span>
+<span class="s0">private double </span><span class="s1">capacidadeDoTanque</span><span class="s0">;</span>
+<span class="s0">private double </span><span class="s1">eficiencia</span><span class="s0">;</span>
+<span class="s0">private double </span><span class="s1">combustivelNoTanque</span><span class="s0">;</span>
+<span class="s0">private int </span><span class="s1">numeroDeViagensRealizadas</span><span class="s0">;</span>
+<span class="s0">public </span><span class="s1">Automovel(String placa</span><span class="s0">,double </span><span class="s1">eficiencia</span><span class="s0">,double </span><span class="s1">capacidadeDoTanque){</span>
+    <span class="s0">this</span><span class="s1">.placa = placa</span><span class="s0">;</span>
+    <span class="s0">this</span><span class="s1">.capacidadeDoTanque = capacidadeDoTanque</span><span class="s0">;</span>
+    <span class="s0">this</span><span class="s1">.eficiencia = eficiencia</span><span class="s0">;</span>
+<span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">String getPlaca() {</span>
+        <span class="s0">return </span><span class="s1">placa</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public double </span><span class="s1">getKmTotal() {</span>
+        <span class="s0">return </span><span class="s1">kmTotal</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public double </span><span class="s1">getCapacidadeDoTanque() {</span>
+        <span class="s0">return </span><span class="s1">capacidadeDoTanque</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public double </span><span class="s1">getEficiencia() {</span>
+        <span class="s0">return </span><span class="s1">eficiencia</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public double </span><span class="s1">getCombustivelNoTanque() {</span>
+        <span class="s0">return </span><span class="s1">combustivelNoTanque</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public int </span><span class="s1">getNumeroDeViagensRealizadas() {</span>
+        <span class="s0">return </span><span class="s1">numeroDeViagensRealizadas</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public void </span><span class="s1">abastece(</span><span class="s0">double </span><span class="s1">quantidade){</span>
+    <span class="s0">if</span><span class="s1">(quantidade &gt; </span><span class="s2">0</span><span class="s1">){</span>
+        <span class="s0">this</span><span class="s1">.combustivelNoTanque += quantidade</span><span class="s0">;</span>
+        <span class="s0">if</span><span class="s1">(</span><span class="s0">this</span><span class="s1">.getCombustivelNoTanque() &gt; </span><span class="s0">this</span><span class="s1">.getCapacidadeDoTanque()){</span>
+            <span class="s0">this</span><span class="s1">.combustivelNoTanque = </span><span class="s0">this</span><span class="s1">.getCapacidadeDoTanque()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+     <span class="s1">}</span>
+  <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">dirige(</span><span class="s0">double </span><span class="s1">distancia){</span>
+        <span class="s0">if</span><span class="s1">(distancia &gt; </span><span class="s2">0</span><span class="s1">) {</span>
+            <span class="s0">if </span><span class="s1">(</span><span class="s0">this</span><span class="s1">.gastoDeCombustivel(distancia) &gt; </span><span class="s0">this</span><span class="s1">.combustivelNoTanque) {</span>
+                <span class="s1">distancia = </span><span class="s0">this</span><span class="s1">.autonomia()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">this</span><span class="s1">.numeroDeViagensRealizadas++</span><span class="s0">;</span>
+            <span class="s0">this</span><span class="s1">.kmTotal += distancia</span><span class="s0">;</span>
+            <span class="s0">this</span><span class="s1">.combustivelNoTanque -= </span><span class="s0">this</span><span class="s1">.gastoDeCombustivel(distancia)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s0">public double </span><span class="s1">gastoDeCombustivel(</span><span class="s0">double </span><span class="s1">distancia){</span>
+        <span class="s0">return </span><span class="s1">distancia / </span><span class="s0">this</span><span class="s1">.eficiencia</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public double </span><span class="s1">autonomia(){</span>
+        <span class="s0">return this</span><span class="s1">.combustivelNoTanque * </span><span class="s0">this</span><span class="s1">.eficiencia</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

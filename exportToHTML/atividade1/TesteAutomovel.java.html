@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>TesteAutomovel.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TesteAutomovel.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">atividade1</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">TesteAutomovel {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+
+        <span class="s1">Automovel car1 = </span><span class="s0">new </span><span class="s1">Automovel(</span><span class="s2">&quot;PSG1970&quot;</span><span class="s0">,</span><span class="s3">80</span><span class="s0">,</span><span class="s3">90</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">car1.abastece(</span><span class="s3">40</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;combustivel no tanque</span><span class="s0">\n</span><span class="s2">:&quot;</span><span class="s1">+car1.getCombustivelNoTanque())</span><span class="s0">;</span>
+        <span class="s1">car1.dirige(</span><span class="s3">400</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Combustivel no tanque</span><span class="s0">\n</span><span class="s2">:&quot;</span><span class="s1">+car1.getCombustivelNoTanque())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Viagens realizadas:</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">+car1.getNumeroDeViagensRealizadas())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Quilometragem total:</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">+car1.getKmTotal())</span><span class="s0">;</span>
+        <span class="s1">car1.dirige(</span><span class="s3">150</span><span class="s1">)</span><span class="s0">;</span>
+
+
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
